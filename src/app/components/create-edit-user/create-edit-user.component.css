@@ -1,0 +1,13 @@
+.form {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form > div {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}

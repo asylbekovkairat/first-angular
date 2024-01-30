@@ -1,0 +1,15 @@
+<main class="container">
+  <div class="users-list_header">
+    <button mat-raised-button color="primary" (click)="openCreateModal()">
+      Добавить пользователя
+    </button>
+  </div>
+  <section class="wrapper">
+    <app-user-card
+      *ngFor="let user of usersService.users"
+      [user]="user"
+      (delete)="deleteUser(user.id)"
+      (edit)="openEditModal(user)"
+    ></app-user-card>
+  </section>
+</main>

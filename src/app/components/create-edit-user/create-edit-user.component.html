@@ -1,0 +1,54 @@
+<form class="form" action="" [formGroup]="userForm" (submit)="onSubmit()">
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Your user name</mat-label>
+      <input matInput formControlName="name" />
+      <ng-container
+        *ngIf="
+          this.userForm.get('name')?.invalid &&
+          this.userForm.get('name')?.touched
+        "
+      >
+        <mat-error>Имя меньше 4 букв</mat-error>
+      </ng-container>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Your E-mail</mat-label>
+      <input matInput formControlName="email" />
+      <ng-container
+        *ngIf="
+          this.userForm.get('email')?.invalid &&
+          this.userForm.get('email')?.touched
+        "
+      >
+        <mat-error>Введите валидный email</mat-error>
+      </ng-container>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Your Phone number</mat-label>
+      <input matInput formControlName="phone" />
+      <ng-container
+        *ngIf="
+          this.userForm.get('phone')?.invalid &&
+          this.userForm.get('phone')?.touched
+        "
+      >
+        <mat-error>Введите номер телефона</mat-error>
+      </ng-container>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Your company name</mat-label>
+      <input matInput formControlName="companyName" />
+      <ng-container
+        *ngIf="
+          this.userForm.get('companyName')?.invalid &&
+          this.userForm.get('companyName')?.touched
+        "
+      >
+        <mat-error>Введите название компании</mat-error>
+      </ng-container>
+    </mat-form-field>
+  </div>
+
+  <button mat-raised type="submit">{{ buttonTitle }}</button>
+</form>
