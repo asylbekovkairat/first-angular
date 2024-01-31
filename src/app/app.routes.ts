@@ -3,4 +3,5 @@ import { UsersListComponent } from './components/users-list/users-list.component
 
 export const routes: Routes = [
   { path: 'users', component: UsersListComponent },
+  { path: '', component: UsersListComponent },
 ];

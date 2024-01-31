@@ -5,7 +5,6 @@ import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
-  FormBuilder,
   Validators,
   FormsModule,
 } from '@angular/forms';
@@ -73,11 +72,13 @@ export class CreateEditUserComponent implements OnInit {
     });
 
     if (this.data) {
-      this.userForm.patchValue({ id: this.data.id });
-      this.userForm.patchValue({ name: this.data.name });
-      this.userForm.patchValue({ email: this.data.email });
-      this.userForm.patchValue({ phone: this.data.phone });
-      this.userForm.patchValue({ companyName: this.data.company.name });
+      this.userForm.patchValue({
+        id: this.data.id,
+        name: this.data.name,
+        email: this.data.email,
+        phone: this.data.phone,
+        companyName: this.data.company.name,
+      });
       this.buttonTitle = ButtonType.EDIT;
     }
   }
