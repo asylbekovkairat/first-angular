@@ -56,7 +56,7 @@ export class CreateEditUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
-      id: new FormControl(''),
+      id: new FormControl(new Date().getSeconds()),
       name: new FormControl('', [Validators.required, Validators.minLength(4)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [
