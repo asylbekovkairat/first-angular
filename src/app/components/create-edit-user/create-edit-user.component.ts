@@ -1,6 +1,6 @@
 import { ButtonType } from './../../models/ButtonType-enum.model';
 import { MatInputModule } from '@angular/material/input';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -43,16 +43,11 @@ import { IUser } from '../../models/User.type';
   styleUrl: './create-edit-user.component.css',
 })
 export class CreateEditUserComponent implements OnInit {
-  public dialogRef: MatDialogRef<CreateEditUserComponent>;
+  private dialogRef = inject(MatDialogRef<CreateEditUserComponent>);
   public buttonTitle: ButtonType = ButtonType.CREATE;
-  userForm!: FormGroup;
+  public userForm!: FormGroup;
 
-  constructor(
-    dialogRef: MatDialogRef<CreateEditUserComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: IUser
-  ) {
-    this.dialogRef = dialogRef;
-  }
+  constructor(@Inject(MAT_DIALOG_DATA) private data: IUser) {}
 
   ngOnInit(): void {
     this.userForm = new FormGroup({

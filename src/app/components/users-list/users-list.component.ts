@@ -26,8 +26,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 })
 export class UsersListComponent implements OnInit {
   private dialog = inject(MatDialog);
-  public usersService = inject(UsersService);
-  public usersFacade = inject(UsersFacade);
+  private usersFacade = inject(UsersFacade);
 
   public users$ = this.usersFacade.users$;
   public status$ = this.usersFacade.status$;
